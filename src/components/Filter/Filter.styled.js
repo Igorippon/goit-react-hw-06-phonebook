@@ -13,4 +13,4 @@ export const Input = styled.input`
 &:focus {
   outline-offset: 5px;
   background-color: #fff
-}`
+}`;
