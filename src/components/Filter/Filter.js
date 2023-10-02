@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 export const Filter = () => {
     const dispatch = useDispatch();
-    const filter = useSelector(getFilterValue)
+    const filter = useSelector(getFilterValue);
     const handleChange = e => {
         dispatch(filterName(e.target.value))
     };
