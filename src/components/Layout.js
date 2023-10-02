@@ -9,4 +9,5 @@ gap: 20px;
 max-width: 1280px;
 margin: 0 auto;
 padding:20px;
+background-color: rgba(229, 236, 231, 0.99);
 `;

@@ -1,6 +1,6 @@
-import { Formik, Field } from "formik";
+import { Formik } from "formik";
 import * as Yup from 'yup';
-import { Label, StyledForm, Button, ErrorMsg } from "./ContactForm.styled";
+import { Label, StyledForm, Button, ErrorMsg, Container, Input } from "./ContactForm.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "redux/contactsSlice";
 
@@ -28,7 +28,7 @@ export const ContactForm = () => {
     };
 
     return (
-        <div>
+        <Container>
             <Formik
                 initialValues={{ name: "", number: '' }}
                 validationSchema={ContactSchema}
@@ -36,17 +36,17 @@ export const ContactForm = () => {
             >
                 <StyledForm>
                     <Label>Name
-                        <Field name="name" type="text" />
+                        <Input name="name" type="text" />
                         <ErrorMsg name="name" component="div" />
                     </Label>
                     <Label>Number
-                        <Field name="number" type="tel" />
+                        <Input name="number" type="tel" />
                         <ErrorMsg name="number" component="div" />
                     </Label>
                     <Button type="submit">Add contact</Button>
                 </StyledForm>
             </Formik>
-        </div>
+        </Container>
     );
 };
 
