@@ -4,8 +4,6 @@ import { Label, StyledForm, Button, ErrorMsg } from "./ContactForm.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "redux/contactsSlice";
 
-
-
 const ContactSchema = Yup.object().shape({
     name: Yup.string()
         .min(3, 'Too Short!')
@@ -17,7 +15,7 @@ const ContactSchema = Yup.object().shape({
 })
 
 export const ContactForm = () => {
-    const contacts = useSelector(state => state.contacts);
+    const contacts = useSelector(state => state.contacts.list);
     const dispatch = useDispatch();
     const handleSubmit = (values, actions) => {
         const contactName = contacts.some(contact => contact.name.toLowerCase() === values.name.toLowerCase());

@@ -1,13 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Item, List, Button } from "./ContactList.styled";
 import { useMemo } from "react";
-import { deleteContact } from "redux/contactsSlice";
+import { deleteContact, getContactValue } from "redux/contactsSlice";
 
 export const ContactList = () => {
-    const contacts = useSelector(state => state.contacts);
+    const contacts = useSelector(getContactValue);
     const filter = useSelector(state => state.filter)
     const dispatch = useDispatch();
-    const visibilContact = useMemo(() => { return contacts.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase())) }, [contacts, filter]);
+    console.log(contacts);
+    const visibilContact = useMemo(() => {
+        return contacts.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()))
+    }, [contacts, filter]);
     return (
         <List>
             {visibilContact.map(({ id, name, number }) => (
