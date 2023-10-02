@@ -7,7 +7,6 @@ import { ContactList } from "./ContactList/ContactList.js";
 export const App = () => {
   return (
     <Layuot>
-      <h1>Phonebook</h1>
       <ContactForm />
       <Filter />
       <ContactList />

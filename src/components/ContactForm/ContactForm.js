@@ -28,25 +28,28 @@ export const ContactForm = () => {
     };
 
     return (
-        <Container>
-            <Formik
-                initialValues={{ name: "", number: '' }}
-                validationSchema={ContactSchema}
-                onSubmit={handleSubmit}
-            >
-                <StyledForm>
-                    <Label>Name
-                        <Input name="name" type="text" />
-                        <ErrorMsg name="name" component="div" />
-                    </Label>
-                    <Label>Number
-                        <Input name="number" type="tel" />
-                        <ErrorMsg name="number" component="div" />
-                    </Label>
-                    <Button type="submit">Add contact</Button>
-                </StyledForm>
-            </Formik>
-        </Container>
+        <>
+            <h1>Phonebook</h1>
+            <Container>
+                <Formik
+                    initialValues={{ name: "", number: '' }}
+                    validationSchema={ContactSchema}
+                    onSubmit={handleSubmit}
+                >
+                    <StyledForm>
+                        <Label>Name
+                            <Input name="name" type="text" />
+                            <ErrorMsg name="name" component="div" />
+                        </Label>
+                        <Label>Number
+                            <Input name="number" type="tel" />
+                            <ErrorMsg name="number" component="div" />
+                        </Label>
+                        <Button type="submit">Add contact</Button>
+                    </StyledForm>
+                </Formik>
+            </Container>
+        </>
     );
 };
 
